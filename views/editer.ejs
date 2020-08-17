@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>vous êtes entrain d'éditer l'employee <%= employee[0].firstname +' ' + employee[0].lastname %> </h3>
+    <form action="/editer" method="post">
+        <p>Nom : <input type="text" name="firstname" id="name" value="<%= employee[0].firstname %>"></p>
+        <p>Prénom : <input type="text" name="lastname" id="lastname" value="<%=employee[0].lastname  %>"></p>
+        <p>Email : <input type="email" name="email" id="name" value="<%= employee[0].email %>"></p>
+        <p>Poste : <input type="text" name="post" id="post" value="<%= employee[0].post %>"></p>
+        <p>Salaire: <input type="number" name="salary" id="name" value=<%=Number(employee[0].salary)%> ></p>
+        <input type="hidden" name="id" value=<%=Number(employee[0].id)%>>
+        <p><input type="submit" value="Editer"></p>
+    </form>
+</body>
+</html>
